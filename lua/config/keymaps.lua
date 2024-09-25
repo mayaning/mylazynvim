@@ -5,6 +5,6 @@ local map = vim.keymap.set
 -- local unmap = vim.keymap.del
 
 -- Ctrl+j 向下跳10行
-map({ "n", "v" }, "<leader>j", "10j")
+-- map({ "n", "v" }, "<leader>j", "10j")
 -- Ctrl+k 向上跳10行
-map({ "n", "v" }, "<leader>k", "10k")
+-- map({ "n", "v" }, "<leader>k", "10k")
