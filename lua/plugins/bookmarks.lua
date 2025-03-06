@@ -4,6 +4,7 @@ return {
   "LintaoAmons/bookmarks.nvim",
   -- tag = "v0.5.4", -- optional, pin the plugin at specific version for stability
   dependencies = {
+    { "kkharji/sqlite.lua" },
     { "nvim-telescope/telescope.nvim" },
     { "stevearc/dressing.nvim" }, -- optional: to have the same UI shown in the GIF
   },
@@ -73,9 +74,48 @@ return {
     require("bookmarks").setup(opts)
   end,
   keys = {
-    { "mm", mode = { "n", "v" }, "<cmd>BookmarksMark<cr>", { desc = "Mark current line into active BookmarkList." } },
-    { "mo", mode = { "n", "v" }, "<cmd>BookmarksGoto<cr>", { desc = "Go to bookmark at current active BookmarkList" } },
-    { "ma", mode = { "n", "v" }, "<cmd>BookmarksCommands<cr>", { desc = "Find and trigger a bookmark command." } },
-    { "mg", mode = { "n", "v" }, "<cmd>BookmarksGotoRecent<cr>", { desc = "Go to latest visited/created Bookmark" } },
+    {
+      "<leader>mm",
+      mode = { "n", "v" },
+      "<cmd>BookmarksMark<cr>",
+      { desc = "Mark current line into active BookmarkList." },
+    },
+    {
+      "<leader>mo",
+      mode = { "n", "v" },
+      "<cmd>BookmarksGoto<cr>",
+      { desc = "Go to bookmark at current active BookmarkList" },
+    },
+    {
+      "<leader>ma",
+      mode = { "n", "v" },
+      "<cmd>BookmarksCommands<cr>",
+      { desc = "Find and trigger a bookmark command." },
+    },
+    {
+      "<leader>mg",
+      mode = { "n", "v" },
+      "<cmd>BookmarksGotoRecent<cr>",
+      { desc = "Go to latest visited/created Bookmark" },
+    },
+    { "<leader>ml", mode = { "n", "v" }, "<cmd>BookmarksLists<cr>", { desc = "Pick a bookmark list with telescope" } },
+    {
+      "<leader>mnl",
+      mode = { "n", "v" },
+      "<cmd>BookmarksNewList<cr>",
+      { desc = "Create a new bookmark list, but I normally use BookmarksTree to create new list" },
+    },
+    {
+      "<leader>mt",
+      mode = { "n", "v" },
+      "<cmd>BookmarksTree<cr>",
+      { desc = "Create a new bookmark list, but I normally use BookmarksTree to create new list" },
+    },
+    {
+      "<leader>mc",
+      mode = { "n", "v" },
+      "<cmd>BookmarksCommands<cr>",
+      { desc = "Find bookmark commands and trigger it" },
+    },
   },
 }
