@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Remote Debug via gdbserver<vscode>",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/test",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "miDebuggerServerAddress": "${input:serverAddress}",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "remoteWorkspaceRoot": "/home/mayaning/Workspace/temp/gdb-test",
+      "uploadSourceMappings": [
+        {
+          "localRoot": "${workspaceFolder}",
+          "remoteRoot": "/home/mayaning/Workspace/temp/gdb-test"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "serverAddress",
+      "type": "promptString",
+      "description": "Enter the gdbserver address (host:port)",
+      "default": "localhost:1234"
+    },
+    {
+      "id": "remoteProjectPath",
+      "type": "promptString",
+      "description": "Enter the remote project path",
+      "default": "/home/user/project"
+    }
+  ]
+}
