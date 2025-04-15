@@ -32,6 +32,10 @@ return {
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
     { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
 
+    -- 自定义快捷键
+    { "<F2>", function() require("dap").continue() end, desc = "Run/Continue" },
+    { "<F3>", function() require("dap").pause() end, desc = "Pause" },
+    { "<F4>", function() require("dap").terminate() end, desc = "Terminate" },
     { "<F5>", function() require("dap").step_over() end, desc = "Step Over" },
     { "<F6>", function() require("dap").step_into() end, desc = "Step Into" },
     { "<F7>", function() require("dap").step_out() end, desc = "Step Out" },
